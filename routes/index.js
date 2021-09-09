@@ -1,4 +1,5 @@
 const express = require("express");
+const dashBoardRoutes = require("./dashBoardRoutes");
 const userRoutes = require("./userRoutes");
 const router = express.Router();
 
@@ -6,6 +7,8 @@ const router = express.Router();
 router.get("/", (req, res) => {
   res.redirect("users");
 });
+
+router.use("/dashBoard", dashBoardRoutes);
 router.use("/users", userRoutes);
 
 module.exports = router;
